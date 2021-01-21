@@ -52,7 +52,7 @@ const AuthConnectContainer: React.FC = () => {
   const location = useLocation();
   return (
     <AuthConnectProvider
-      refreshOnChange={location.pathname}
+      checkSessionOnChange={location.pathname}
       logLevel={'ERROR'}
       authConfig={'auth0'}
       platform={platform}
@@ -67,6 +67,8 @@ const AuthConnectContainer: React.FC = () => {
       iosWebView={'private'}
       webAuthFlow={'PKCE'}
       implicitLogin={'POPUP'}
+      loginPath="/login"
+      initializingComponent={() => <div>Initializing Auth Connect...</div>}
     >
       <Switch>
         <Route path="/login" component={Login} />

@@ -36,7 +36,7 @@ const UserCard: React.FC<UserCardProps> = () => {
             <img src={idToken?.picture} alt={idToken?.name} />
           </IonAvatar>
           <IonLabel>
-            <h2>{idToken?.name}</h2>
+            <h2>{idToken?.name}</h2> 
             <p>{idToken?.email}</p>
             <p>Status: {isAuthenticated ? 'Logged In' : 'Logged Out'}</p>
             <p>Access Token: {accessToken}</p>

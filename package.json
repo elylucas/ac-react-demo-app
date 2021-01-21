@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@capacitor/core": "2.4.5",
+    "@capacitor/ios": "^2.4.5",
     "@ionic-enterprise/auth": "^3.3.2-dev-d900e50.0",
     "@ionic-enterprise/auth-react": "^3.3.2-dev-d900e50.0",
     "@ionic/react": "^5.0.7",

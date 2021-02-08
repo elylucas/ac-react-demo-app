@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 import { IonApp, isPlatform } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
@@ -38,6 +38,8 @@ const logoutUrl = isPlatform('capacitor')
   ? 'com.elylucas.auth-demo://logout'
   : 'http://localhost:3000/logout';
 
+console.log('detected platform', { platform });
+
 const App: React.FC = () => {
   return (
     <IonApp>
@@ -50,6 +52,11 @@ const App: React.FC = () => {
 
 const AuthConnectContainer: React.FC = () => {
   const location = useLocation();
+
+  const handleLoginSuccess = useCallback((result) => {
+    console.log('Login Success', { result });
+  }, []);
+
   return (
     <AuthConnectProvider
       checkSessionOnChange={location.pathname}
@@ -69,6 +76,7 @@ const AuthConnectContainer: React.FC = () => {
       implicitLogin={'POPUP'}
       loginPath="/login"
       initializingComponent={() => <div>Initializing Auth Connect...</div>}
+      onLoginSuccess={handleLoginSuccess}
     >
       <Switch>
         <Route path="/login" component={Login} />

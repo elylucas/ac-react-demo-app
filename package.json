@@ -5,8 +5,8 @@
   "dependencies": {
     "@capacitor/core": "^3.0.0-beta.1",
     "@capacitor/ios": "^2.4.5",
-    "@ionic-enterprise/auth": "^3.4.0-dev-9e200ad.0",
-    "@ionic-enterprise/auth-react": "^3.4.0-dev-9e200ad.0",
+    "@ionic-enterprise/auth": "^3.4.1",
+    "@ionic-enterprise/auth-react": "^3.4.1",
     "@ionic/react": "^5.0.7",
     "@ionic/react-router": "^5.0.7",
     "@testing-library/jest-dom": "^4.2.4",
